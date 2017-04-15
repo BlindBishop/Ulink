@@ -25,19 +25,12 @@ class CreateUsersTable extends Migration
             $table->string('Uabb');
 //            $table->rememberToken();
             $table->timestamps();
-        });
 
-        Schema::table('users', function (Blueprint $table)
-        {
-            $table->foreign('Uname')
-                ->references('Uname')->on('universities')
+            $table->foreign(array('Uname', 'Uabb'))
+                ->references(array('Uname', 'Uabb'))
+                ->on('universities')
                 ->onDelete('cascade');
-           });
-        Schema::table('users', function (Blueprint $table)
-        {
-            $table->foreign('Uabb')
-                ->references('Uabb')->on('universities');
-           });
+        });
     }
 
     /**

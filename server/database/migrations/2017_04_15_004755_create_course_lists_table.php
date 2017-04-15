@@ -14,20 +14,16 @@ class CreateCourseListsTable extends Migration
     public function up()
     {
         Schema::create('course_lists', function (Blueprint $table) {
-            $table->string('major')->primary();
-            $table->integer('number')->primary();
-            $table->string('Uname')->primary();
-            $table->string('Uabb')->primary();
+            $table->string('major');
+            $table->integer('number');
+            $table->string('Uname');
+            $table->string('Uabb');
             $table->timestamps();
-        });
 
-        Schema::table('course_lists', function (Blueprint $table)
-        {
-            $table->foreign('Uname')
-                ->references('Uname')->on('universities')
-                ->onDelete('cascade');
-            $table->foreign('Uabb')
-                ->references('Uabb')->on('universities')
+            $table->primary(array('major', 'number'));
+            $table->foreign(array('Uname', 'Uabb'))
+                ->references(array('Uname', 'Uabb'))
+                ->on('universities')
                 ->onDelete('cascade');
         });
     }

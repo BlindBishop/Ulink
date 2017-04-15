@@ -277,7 +277,7 @@ class ComposerStaticInit9671e66dbe67b1eb04acf97c3211d4d6
         'CountryTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CountryTableSeeder.php',
         'CreateConversationsTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_15_004741_create_conversations_table.php',
         'CreateCourseListsTable' => __DIR__ . '/../..',
-        'CreateCoursesTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_15_013327_create_courses_table.php',
+        'CreateCoursesTable' => __DIR__ . '/../..',
         'CreateDependents1' => __DIR__ . '/../..' . '/database/migrations/2017_02_09_225554_create_dependents_1.php',
         'CreateDependents2' => __DIR__ . '/../..' . '/database/migrations/2017_02_09_225600_create_dependents_2.php',
         'CreateDependents3' => __DIR__ . '/../..' . '/database/migrations/2017_02_09_225607_create_dependents_3.php',

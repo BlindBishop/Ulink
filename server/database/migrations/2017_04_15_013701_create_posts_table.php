@@ -16,17 +16,14 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('body');
-            $table->string('userEmail');
-            $table->integer('group_id');
-            $table->integer('section_id');
-            $table->integer('course_id');
-            $table->integer('document_id');
-            $table->integer('comment_id');
+            $table->string('userEmail')->nullable();
+            $table->integer('group_id')->unsigned()->nullable();
+            $table->integer('section_id')->unsigned()->nullable();
+            $table->integer('course_id')->unsigned()->nullable();
+            $table->integer('document_id')->unsigned()->nullable();
+            $table->integer('comment_id')->unsigned()->nullable();
             $table->timestamps();
-        });
 
-        Schema::table('posts', function (Blueprint $table)
-        {
             $table->foreign('userEmail')
                 ->references('userEmail')->on('users')
                 ->onDelete('cascade');
@@ -43,7 +40,7 @@ class CreatePostsTable extends Migration
                 ->references('id')->on('documents')
                 ->onDelete('cascade');
             $table->foreign('comment_id')
-                ->references('id')->on('comments')
+                ->references('id')->on('posts')
                 ->onDelete('cascade');
         });
     }

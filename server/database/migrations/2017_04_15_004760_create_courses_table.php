@@ -19,18 +19,13 @@ class CreateCoursesTable extends Migration
             $table->integer('course_number');
             $table->string('userEmail');
             $table->timestamps();
-        });
 
-        Schema::table('courses', function (Blueprint $table)
-        {
-            $table->foreign('course_number')
-                ->references('number')->on('course_lists')
-                ->onDelete('cascade');
-            $table->foreign('major')
-                ->references('major')->on('course_lists')
-                ->onDelete('cascade');
             $table->foreign('userEmail')
                 ->references('userEmail')->on('users')
+                ->onDelete('cascade');
+            $table->foreign(array('major', 'course_number'))
+                ->references(array('major', 'number'))
+                ->on('course_lists')
                 ->onDelete('cascade');
         });
     }

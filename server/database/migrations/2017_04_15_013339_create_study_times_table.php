@@ -18,14 +18,11 @@ class CreateStudyTimesTable extends Migration
             $table->dateTime('beginning');
             $table->dateTime('end');
             $table->string('privacy');
-            $table->integer('group_id')->nullable();
-            $table->integer('course_id')->nullable();
+            $table->integer('group_id')->unsigned()->nullable();
+            $table->integer('course_id')->unsigned()->nullable();
             $table->string('userEmail')->nullable();
             $table->timestamps();
-        });
 
-        Schema::table('study_times', function (Blueprint $table)
-        {
             $table->foreign('group_id')
                 ->references('id')->on('groups')
                 ->onDelete('cascade');

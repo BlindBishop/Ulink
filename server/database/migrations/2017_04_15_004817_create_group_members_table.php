@@ -15,12 +15,10 @@ class CreateGroupMembersTable extends Migration
     {
         Schema::create('group_members', function (Blueprint $table) {
             $table->string('userEmail');
-            $table->integer('group_id');
+            $table->integer('group_id')->unsigned();
             $table->timestamps();
-        });
 
-        Schema::table('group_members', function (Blueprint $table)
-        {
+            $table->primary(array('userEmail', 'group_id'));
             $table->foreign('userEmail')
                 ->references('userEmail')->on('users')
                 ->onDelete('cascade');

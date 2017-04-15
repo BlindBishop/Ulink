@@ -14,11 +14,13 @@ class CreateUniversitiesTable extends Migration
     public function up()
     {
         Schema::create('universities', function (Blueprint $table) {
-            $table->string('Uname')->primary();
+            $table->string('Uname');
             $table->string('Uabb');
             $table->timestamps();
+            $table->primary(array('Uname', 'Uabb'));
         });
-        DB::unprepared('ALTER TABLE `universities` DROP PRIMARY KEY, ADD PRIMARY KEY (  `Uname` ,  `Uabb` )');
+
+//        DB::unprepared('ALTER TABLE `universities` DROP PRIMARY KEY, ADD PRIMARY KEY (  `Uname` ,  `Uabb` )');
     }
 
     /**

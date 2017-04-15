@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSkillsTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,17 @@ class CreateSkillsTable extends Migration
      */
     public function up()
     {
-        Schema::create('skills', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('userEmail')->primary();
-            $table->string('skill_name');
-            $table->integer('rating');
+            $table->string('content');
+            $table->dateTime('date');
+            $table->integer('conversation_id')->unsigned();
             $table->timestamps();
 
-        });
-        Schema::table('skills', function (Blueprint $table)
-        {
-            $table->foreign('userEmail')
-                ->references('userEmail')->on('users')
+            $table->foreign('conversation_id')
+                ->references('id')->on('conversations')
                 ->onDelete('cascade');
-           });
+        });
     }
 
     /**
@@ -36,6 +33,6 @@ class CreateSkillsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('skills');
+        Schema::dropIfExists('messages');
     }
 }

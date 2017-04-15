@@ -17,15 +17,12 @@ class CreateDocumentsTable extends Migration
             $table->increments('id');
             $table->string('type');
             $table->string('url_loc');
-            $table->integer('section_id')->nullable();
-            $table->integer('course_id')->nullable();
-            $table->integer('group_id')->nullable();
+            $table->integer('section_id')->unsigned()->nullable();
+            $table->integer('course_id')->unsigned()->nullable();
+            $table->integer('group_id')->unsigned()->nullable();
             $table->string('userEmail')->nullable();
             $table->timestamps();
-        });
 
-        Schema::table('documents', function (Blueprint $table)
-        {
             $table->foreign('section_id')
                 ->references('id')->on('sections')
                 ->onDelete('cascade');
