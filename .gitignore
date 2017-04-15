@@ -1,0 +1,5 @@
+client/node_modules
+server/public/dist
+.idea
+server/public/vendor/npm-debug.log
+server/public/js/employees/accidents

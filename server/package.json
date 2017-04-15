@@ -1,0 +1,35 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "Capstone Example Project",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlindBishop/CapstoneExample.git"
+  },
+  "keywords": [
+    "angular",
+    "laravel"
+  ],
+  "author": "Hunter Hough",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlindBishop/CapstoneExample/issues"
+  },
+  "homepage": "https://github.com/BlindBishop/CapstoneExample#readme",
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-animate": "^1.6.3",
+    "angular-sanitize": "^1.6.3",
+    "angular-ui-bootstrap": "^2.5.0",
+    "angular-ui-router": "^0.4.2",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4"
+  }
+}

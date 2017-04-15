@@ -1,0 +1,31 @@
+{
+  "name": "crud",
+  "description": "Capstone Example Project",
+  "main": "public/views/index.php",
+  "authors": [
+    "Hunter Hough"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "laravel"
+  ],
+  "homepage": "https://github.com/BlindBishop/CapstoneExample",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-ui-router": "^0.4.2",
+    "angular-bootstrap": "^2.5.0",
+    "angular-animate": "^1.6.3",
+    "jquery": "^3.2.1",
+    "angular-sanitize": "^1.6.3",
+    "lodash": "^4.17.4"
+  }
+}
