@@ -45,7 +45,7 @@ class UsersTableSeeder extends Seeder
             'Uabb' => 'JMU',
         ]);
         DB::table('users')->insert([
-            'email' => 'tom@dukes.jmu.edu',
+            'email' => 'tom@uva.edu',
             'password' => 'uva',
             'first' => 'Thomas',
             'last' => 'Jefferson',
@@ -56,7 +56,7 @@ class UsersTableSeeder extends Seeder
             'Uabb' => 'UVA',
         ]);
         DB::table('users')->insert([
-            'email' => 'jim@dukes.jmu.edu',
+            'email' => 'jim@vtech.edu',
             'password' => 'tech',
             'first' => 'Jimmy',
             'last' => 'Tech',

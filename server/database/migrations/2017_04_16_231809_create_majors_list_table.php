@@ -16,6 +16,7 @@ class CreateMajorsListsTable extends Migration
         Schema::create('majors_list', function (Blueprint $table) {
             $table->string('userEmail');
             $table->string('major');
+            $table->string('minor');
             $table->timestamps();
 
             $table->primary(array('userEmail', 'major'));
