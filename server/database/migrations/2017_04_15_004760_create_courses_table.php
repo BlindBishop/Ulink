@@ -18,6 +18,8 @@ class CreateCoursesTable extends Migration
             $table->string('major');
             $table->integer('course_number');
             $table->string('userEmail');
+            $table->string('Uname');
+            $table->string('Uabb');
             $table->timestamps();
 
             $table->foreign('userEmail')
@@ -26,6 +28,10 @@ class CreateCoursesTable extends Migration
             $table->foreign(array('major', 'course_number'))
                 ->references(array('major', 'number'))
                 ->on('course_lists')
+                ->onDelete('cascade');
+            $table->foreign(array('Uname', 'Uabb'))
+                ->references(array('Uname', 'Uabb'))
+                ->on('universities')
                 ->onDelete('cascade');
         });
     }

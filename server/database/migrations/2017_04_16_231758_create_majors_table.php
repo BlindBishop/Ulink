@@ -1,10 +1,10 @@
 <?php
 
-//use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUniversitiesTable extends Migration
+class CreateMajorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateUniversitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('universities', function (Blueprint $table) {
-            $table->string('Uname');
-            $table->string('Uabb');
+        Schema::create('majors', function (Blueprint $table) {
+            $table->string('major')->primary();
             $table->timestamps();
-            $table->primary(array('Uname', 'Uabb'));
         });
     }
 
@@ -28,6 +26,6 @@ class CreateUniversitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('universities');
+        Schema::dropIfExists('majors');
     }
 }

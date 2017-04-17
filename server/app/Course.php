@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Message extends Model {
+class Course extends Model {
 
     protected $fillable = array(
-        'content',
-        'date',
-        'conversation_id'
+        'major',
+        'course_number',
+        'userEmail'
     );
 }

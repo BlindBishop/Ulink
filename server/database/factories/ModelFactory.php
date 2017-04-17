@@ -17,45 +17,58 @@
  * This way you don't have to write dozens of insert statements to test results
  */
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Employee::class, function (Faker\Generator $faker) {
+$factory->define(App\User::class, function (Faker\Generator $faker)
+{
     return [
-        'FirstName' =>$faker->firstName,
-        'MI' => $faker->toUpper($faker->randomLetter),
-        'LastName' => $faker->lastName,
-        'HouseNumber' =>$faker->numberBetween(100,99999),
-        'Street' => $faker->streetName,
-        'City' => $faker->city,
-        'County' => $faker->city,
-        'EmployeeState' => $faker->randomElement(['VA','CA','TX',null, null, null, null, null]),
-        'EmployeeCountry' => $faker->randomElement(['US','SE','DE','PL','DK','IE','ES','IT','CH']),
-        'Zip' => $faker->numberBetween(10000,99999),
-        'DateOfBirth' => $faker->date('Ymd'),
-        'HireDate' => $faker->date('Ymd'),
-        'LicenseDate' => $faker->date('Ymd'),
+        'email'           => $faker->email,
+        'password'        => $faker->password(6,20),
+        'first'           => $faker->firstName,
+        'last'            => $faker->lastName,
+        'bio'             => $faker->text(200),
+        'gradYr'          => $faker->dateTime,
+        'major'           => $faker->randomElement('CIS', 'ACCT', 'FIN', 'BIO'),
+        'professor'       => $faker->randomElement(1,0,0,0),
+        'Uname'           => $faker->randomElement('James Madison University', 'University of Virginia', 'Virginia Tech', 'Radford'),
+        'Uabb'            => $faker->firstName,
+
+        'FirstName'       => $faker->firstName,
+        'MI'              => $faker->toUpper($faker->randomLetter),
+        'LastName'        => $faker->lastName,
+        'HouseNumber'     => $faker->numberBetween(100, 99999),
+        'Street'          => $faker->streetName,
+        'City'            => $faker->city,
+        'County'          => $faker->city,
+        'EmployeeState'   => $faker->randomElement(['VA', 'CA', 'TX', null, null, null, null, null]),
+        'EmployeeCountry' => $faker->randomElement(['US', 'SE', 'DE', 'PL', 'DK', 'IE', 'ES', 'IT', 'CH']),
+        'Zip'             => $faker->numberBetween(10000, 99999),
+        'DateOfBirth'     => $faker->date('Ymd'),
+        'HireDate'        => $faker->date('Ymd'),
+        'LicenseDate'     => $faker->date('Ymd'),
         'TerminationDate' => $faker->date('Ymd'),
-        'Salary' => $faker->randomFloat(2,100,99999),
+        'Salary'          => $faker->randomFloat(2, 100, 99999),
     ];
 });
 
-$factory->define(App\Accident::class, function (Faker\Generator $faker) {
+$factory->define(App\Accident::class, function (Faker\Generator $faker)
+{
     return [
-        'EmployeeID' => $faker->numberBetween(1,10),
-        'AccidentDate' =>$faker->date('Ymd'),
-        'AccidentDescription' =>$faker->text(200),
-        'AccidentState' =>$faker->randomElement(['VA','CA','TX',null, null, null, null, null]),
-        'AccidentCountry' =>$faker->randomElement(['US','SE','DE','PL','DK','IE','ES','IT','CH']),
+        'EmployeeID'          => $faker->numberBetween(1, 10),
+        'AccidentDate'        => $faker->date('Ymd'),
+        'AccidentDescription' => $faker->text(200),
+        'AccidentState'       => $faker->randomElement(['VA', 'CA', 'TX', null, null, null, null, null]),
+        'AccidentCountry'     => $faker->randomElement(['US', 'SE', 'DE', 'PL', 'DK', 'IE', 'ES', 'IT', 'CH']),
     ];
-
 });
 
-$factory->define(App\Claim::class, function (Faker\Generator $faker) {
+$factory->define(App\Claim::class, function (Faker\Generator $faker)
+{
     return [
-        'AccidentID' => $faker->numberBetween(1,15),
-        'ClaimDate' =>$faker->date('Ymd'),
-        'ClaimDescription' =>$faker->text(200),
-        'ClaimState' =>$faker->randomElement(['VA','CA','TX',null, null, null, null, null]),
-        'ClaimCountry' =>$faker->randomElement(['US','SE','DE','PL','DK','IE','ES','IT','CH']),
-        'ClaimAmount' =>$faker->randomFloat(2,10,100000),
+        'AccidentID'       => $faker->numberBetween(1, 15),
+        'ClaimDate'        => $faker->date('Ymd'),
+        'ClaimDescription' => $faker->text(200),
+        'ClaimState'       => $faker->randomElement(['VA', 'CA', 'TX', null, null, null, null, null]),
+        'ClaimCountry'     => $faker->randomElement(['US', 'SE', 'DE', 'PL', 'DK', 'IE', 'ES', 'IT', 'CH']),
+        'ClaimAmount'      => $faker->randomFloat(2, 10, 100000),
     ];
 
 });

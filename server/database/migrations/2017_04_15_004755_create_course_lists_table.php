@@ -20,7 +20,7 @@ class CreateCourseListsTable extends Migration
             $table->string('Uabb');
             $table->timestamps();
 
-            $table->primary(array('major', 'number'));
+            $table->primary(array('major', 'number', 'Uname', 'Uabb'));
             $table->foreign(array('Uname', 'Uabb'))
                 ->references(array('Uname', 'Uabb'))
                 ->on('universities')

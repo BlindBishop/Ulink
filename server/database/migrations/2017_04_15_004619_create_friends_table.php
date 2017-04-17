@@ -16,6 +16,7 @@ class CreateFriendsTable extends Migration
         Schema::create('friends', function (Blueprint $table) {
             $table->string('primeUser');
             $table->string('foreignUser');
+            $table->string('relationship');
             $table->string('status');
             $table->timestamps();
 

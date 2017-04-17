@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Study_Times extends Model
+class Major extends Model
 {
     //
 }
