@@ -11,6 +11,7 @@ class Friends_TableSeeder extends Seeder
      */
     public function run()
     {
+        //james friends
         DB::table('friends')->insert([
             'primeUser' => 'james@dukes.jmu.edu',
             'foreignUser' => 'smith@dukes.jmu.edu',
@@ -23,12 +24,7 @@ class Friends_TableSeeder extends Seeder
             'relationship' => null,
             'status' => 'active',
         ]);
-        DB::table('friends')->insert([
-            'primeUser' => 'moon@dukes.jmu.edu',
-            'foreignUser' => 'james@dukes.jmu.edu',
-            'relationship' => null,
-            'status' => 'active',
-        ]);
+
         DB::table('friends')->insert([
             'primeUser' => 'james@dukes.jmu.edu',
             'foreignUser' => 'moon@dukes.jmu.edu',
@@ -36,8 +32,22 @@ class Friends_TableSeeder extends Seeder
             'status' => 'active',
         ]);
         DB::table('friends')->insert([
+            'primeUser' => 'moon@dukes.jmu.edu',
+            'foreignUser' => 'james@dukes.jmu.edu',
+            'relationship' => null,
+            'status' => 'active',
+        ]);
+
+        //smith friends
+        DB::table('friends')->insert([
             'primeUser' => 'smith@dukes.jmu.edu',
             'foreignUser' => 'moon@dukes.jmu.edu',
+            'relationship' => null,
+            'status' => 'pending',
+        ]);
+        DB::table('friends')->insert([
+            'primeUser' => 'moon@dukes.jmu.edu',
+            'foreignUser' => 'smith@dukes.jmu.edu',
             'relationship' => null,
             'status' => 'pending',
         ]);
